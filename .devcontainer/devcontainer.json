@@ -1,0 +1,30 @@
+{
+    "name": "Azure Bicep",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+      "ghcr.io/devcontainers/features/azure-cli:1": {
+        "version": "latest"
+      },
+      "ghcr.io/rchaganti/vsc-devcontainer-features/azurebicep:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers/features/terraform:1": {
+        "version": "latest"
+      },
+      "ghcr.io/devcontainers/features/dotnet:2": {
+        "version": "latest"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "vscodevim.vim",
+          "eamodio.gitlens",
+          "GitHub.copilot",
+          "GitHub.copilot-chat",
+          "github.vscode-github-actions",
+          "Equinusocio.moxer-icons"
+        ]
+      }
+    }
+  }
