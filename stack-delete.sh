@@ -1,0 +1,1 @@
+az stack sub delete --name 'stack1-avd-dev' --delete-all

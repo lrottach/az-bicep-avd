@@ -1,0 +1,1 @@
+az stack sub show --name 'stack1-avd-dev' --output jsonc
