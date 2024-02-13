@@ -9,7 +9,7 @@
 // * 
 // ********************************************************************************* 
 
-// * Tag Parameter
+// * Location Parameter
 // *************************
 type locationParameterObject = 'switzerlandnorth' | 'westeurope' | 'northeurope'
 
@@ -41,6 +41,7 @@ type networkParameterObject = {
 type avdManagementPlaneParameterObject = {}
 
 // AVD - Workspace
+@sealed()
 type avdWorkspaceParameterObject = {
   name: string
   location: locationParameterObject
@@ -49,6 +50,22 @@ type avdWorkspaceParameterObject = {
 }
 
 // AVD - Host Pool
+@sealed()
+type poolParameterObject = {
+  name: string
+  location: locationParameterObject
+  friendlyName: string
+  description: string?
+  maxSessionLimit: int
+  validationEnvironment: bool
+  startVmOnConnect: bool
+  hostpoolType: 'Pooled' | 'Personal'
+  loadBalancerType: 'BreadthFirst' | 'DepthFirst' | 'Persistent'
+  preferredAppGroupType: 'Desktop' | 'None' | 'RailApplications'
+}
 
+// AVD - Host Pool Array
+@export()
+type poolParameterArrayObject = poolParameterObject[]
 
 // AVD - Application Group
