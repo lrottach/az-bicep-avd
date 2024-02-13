@@ -8,3 +8,13 @@ type tagParameterObject = {
   ServiceDescription: string
   ServiceUnit: string
 }
+
+// * Network Parameter
+// *************************
+@export()
+type networkParameterObject = {
+  vnetName: string
+  vnetRgName: string
+  subnetName: string
+}
+
