@@ -16,7 +16,7 @@ using 'main.bicep'
 param deploymentRegion = 'West Europe'
 
 // Resource Group Parameter
-param rgMgmtPlaneName = 'rg-mgmt-plane'
+param rgMgmtPlaneName = 'rg-lzo-avd1-mgmt1-we'
 
 // Network Parameter
 param targetNetworkInformation = {
