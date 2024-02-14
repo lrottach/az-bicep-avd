@@ -1,4 +1,4 @@
-using 'main.bicep'
+using 'main_backend.bicep'
 
 // ********************************************************************************* 
 // * 
@@ -34,3 +34,31 @@ param tags = {
   ServiceUnit: 'LZO-AVD1'
   CostCenter: 'CC-00372X'
 }
+
+// AVD Management Plane Resources
+param avdResources = [
+  {
+    name: 'w1-lzo-avd1-we'
+    friendlyName: 'Dark Contoso Lab - Corporate'
+    location: 'westeurope'
+    hostPools: [
+      {
+        name: 'w1-hp1-lzo-avd1-we'
+        friendlyName: 'SAP Desktop'
+        location: 'westeurope'
+        description: 'SAP Infrastructure'
+        hostpoolType: 'Pooled'
+        loadBalancerType: 'BreadthFirst'
+        maxSessionLimit: 5
+        preferredAppGroupType: 'Desktop'
+        startVmOnConnect: false
+        validationEnvironment: false
+      }
+    ]
+  }
+  {
+    name: 'w2-lzo-avd1-we'
+    friendlyName: 'Dark Contoso Lab - Integration'
+    location: 'westeurope'
+  }
+]
