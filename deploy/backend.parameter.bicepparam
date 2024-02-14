@@ -18,13 +18,6 @@ param deploymentRegion = 'West Europe'
 // Resource Group Parameter
 param rgMgmtPlaneName = 'rg-lzo-avd1-mgmt1-we'
 
-// Network Parameter
-param targetNetworkInformation = {
-  vnetName: 'vnet-lzo-avd1-net1-we'
-  vnetRgName: 'rg-lzo-avd1-net1-we'
-  subnetName: 'ClientSubnet'
-}
-
 // Tag Parameter
 param tags = {
   CreatedBy: 'lrottach@darkcontoso.io'
