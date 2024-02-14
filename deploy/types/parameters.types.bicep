@@ -37,17 +37,19 @@ type networkParameterObject = {
 // * Azure Virtual Desktop Parameter
 // *************************
 
-// AVD - Management Plane Parameter
-type avdManagementPlaneParameterObject = {}
-
 // AVD - Workspace
 @sealed()
-type avdWorkspaceParameterObject = {
+type workspaceParameterObject = {
   name: string
   location: locationParameterObject
-  description: string
+  description: string?
   friendlyName: string
+  hostPools: poolParameterArrayObject?
 }
+
+// AVD - Workspace Array
+@export()
+type avdMgmtPlaneObject = workspaceParameterObject[]
 
 // AVD - Host Pool
 @sealed()
@@ -62,6 +64,7 @@ type poolParameterObject = {
   hostpoolType: 'Pooled' | 'Personal'
   loadBalancerType: 'BreadthFirst' | 'DepthFirst' | 'Persistent'
   preferredAppGroupType: 'Desktop' | 'None' | 'RailApplications'
+  appGroups: appGroupParameterArrayObject?
 }
 
 // AVD - Host Pool Array
@@ -69,3 +72,15 @@ type poolParameterObject = {
 type poolParameterArrayObject = poolParameterObject[]
 
 // AVD - Application Group
+@sealed()
+type appGroupParameterObject = {
+  name: string
+  location: locationParameterObject
+  friendlyName: string
+  description: string?
+  appGroupType: 'Desktop' | 'RemoteApp'
+}
+
+// AVD - Application Group Array
+@export()
+type appGroupParameterArrayObject = appGroupParameterObject[]
